@@ -23,7 +23,15 @@ Here's a rundown of what they do:
 
 Most of the canonical 104 code style is summed up by our `clang-format` configuration, which you can experiment with by writing some code and formatting it to see what changes.
 It's worth mentioning that we accept both same-line and K&R open brace positioning, but you'll have to modify the corresponding `.clang-format` options to enable the latter.
-If you have no idea what that means, then don't worry about it!
+For reference:
+
+```c++
+// Same line            // K&R
+int main() {            int main()
+    // ...              {
+}                           // ...
+                        }
+```
 
 What remains after is pretty much just naming, and we adhere to a pretty standard guideline here:
 
