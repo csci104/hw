@@ -34,10 +34,10 @@ $ clang-format -i directory/file.cpp
 If you want to format multiple files in a directory, you can use wildcard operators:
 
 ```
-# format all .cpp files in directory/
+# Format all .cpp files in directory/
 $ clang-format -i directory/*.cpp
 
-# format all .cpp and .h files in directory/ 
+# Format all .cpp and .h files in directory/ 
 $ clang-format -i directory/*.{h,cpp}
 ```
 
@@ -45,7 +45,7 @@ Lastly, you can use the double asterisk to recursively glob.
 This is necessary when you also want to format files in subdirectories.
 
 ```
-# format all .cpp and .h files in directory/ and subdirectories
+# Format all .cpp and .h files in directory/ and subdirectories
 $ clang-format -i directory/**/*.{h,cpp}
 ```
 
