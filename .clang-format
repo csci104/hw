@@ -8,6 +8,7 @@
 ---
 
 # Feel free to switch this to K&R if you know what you're doing.
+
 BraceWrapping:
   AfterClass: false
   AfterControlStatement: false
@@ -26,6 +27,7 @@ BraceWrapping:
 
 # Do not modify these settings. If you like to appeal any of them, first reach
 # out to the course staff.
+
 Language: Cpp
 AccessModifierOffset: -2
 AlignAfterOpenBracket: AlwaysBreak

@@ -1,5 +1,17 @@
+# I honestly wouldn't even recommend messing with this unless you wanted to add
+# more checks to the list.
+
 ---
+
+# This is the master list of everything clang-tidy will look for. You can read
+# more about the available checks in the documentation online:
+# https://clang.llvm.org/extra/clang-tidy/
+
 Checks: 'clang-diagnostic-*,clang-analyzer-*,bugprone-*,cppcoreguidelines-*'
+
+# Since we don't enforce that you use this, it's not a big deal if you mess
+# with the below settings.
+
 WarningsAsErrors: ''
 HeaderFilterRegex: '*'
 AnalyzeTemporaryDtors: false
