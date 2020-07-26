@@ -70,7 +70,7 @@ $ clang-tidy directory/file.cpp -- -I included/
 ```
 
 Unlike `clang-format`, we don't require you to use `clang-tidy`.
-Instead, we just offer it as a way for you to debug your assigment submissions.
+Instead, we just offer it as a way for you to help debug your work.
 Oftentimes, you'll find that heeding the warnings from `clang-tidy` will save you from bugs before you even find them.
 
 Another tool you can use in this vein is `cppcheck`.
