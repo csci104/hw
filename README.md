@@ -1,18 +1,18 @@
 # Homework
 
-This repository is private and should only be accessed by the student who owns it and course staff or professors.
-Please do not share your code or copy other peoples', as it is always pretty obvious and will be caught by our plagiarism detection software.
+Please do not share your code or copy code from other students.
+Once you've read through this, feel free to delete it, though you may want to keep the formatting and linting sections as reference.
 
 ## Getting Started
 
 You might have noticed a couple extra files lying around this repository.
-Here's a rundown of what they do.
+Here's a rundown of what they do:
 
 - `.clang-format` provides some settings for `clang-format`, which is a tool you can use to automatically reformat your code.
-  We've included some instructions on how to use it below.
+  We've included some instructions on how to use it in the [formatting section](#formatting).
   Feel free to page through the configuration file if you're interested in how it works.
 - `.clang-tidy` provides settings for `clang-tidy`, which does semantic checks on C++ files.
-  Just like for `clang-format`, we've included instructions on how to use this tool below.
+  We've included instructions on how to use this tool in the [linting section](#linting).
 - `.editorconfig` gives most IDEs some idea about how to handle whitespace in your code files.
   It also limits the charset to `utf8` to avoid any encoding bugs.
 - `.gitignore` prevents files from being added to the index by git.
@@ -28,25 +28,25 @@ You can invoke `clang-format` from the command line, and it comes installed out 
 We have already provided you with a set of rules, so running the utility within your homework repository is as easy as:
 
 ```
-$ clang-format -i hw1/file.cpp
+$ clang-format -i directory/file.cpp
 ``` 
 
 If you want to format multiple files in a directory, you can use wildcard operators:
 
 ```
-# format all .cpp files in hw1/
-$ clang-format -i hw1/*.cpp
+# format all .cpp files in directory/
+$ clang-format -i directory/*.cpp
 
-# format all .cpp and .h files in hw1/ 
-$ clang-format -i hw1/*.{h,cpp}
+# format all .cpp and .h files in directory/ 
+$ clang-format -i directory/*.{h,cpp}
 ```
 
 Lastly, you can use the double asterisk to recursively glob.
 This is necessary when you also want to format files in subdirectories.
 
 ```
-# format all .cpp and .h files in hw1/ and subdirectories
-$ clang-format -i hw1/**/*.{h,cpp}
+# format all .cpp and .h files in directory/ and subdirectories
+$ clang-format -i directory/**/*.{h,cpp}
 ```
 
 Please make sure you **format your code before submitting**. 
@@ -63,12 +63,23 @@ We recommend you use it one file at a time so that the output is more digestible
 
 ```
 # Get warnings about a single file
-$ clang-tidy hw1/file.cpp --
+$ clang-tidy directory/file.cpp --
 
 # You can add arguments you'd pass to g++ after the --
-$ clang-tidy hw1/file.cpp -- -I included/
+$ clang-tidy directory/file.cpp -- -I included/
 ```
 
 Unlike `clang-format`, we don't require you to use `clang-tidy`.
 Instead, we just offer it as a way for you to debug your assigment submissions.
 Oftentimes, you'll find that heeding the warnings from `clang-tidy` will save you from bugs before you even find them.
+
+Another tool you can use in this vein is `cppcheck`.
+You can invoke `cppcheck` fairly similarly:
+
+```
+# Check file.cpp
+$ cppcheck --enable=all directory/file.cpp
+
+# Specify include directories as well
+$ cppcheck --enable=all directory/file.cpp -I included/
+```
