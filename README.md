@@ -58,12 +58,12 @@ For example, it can warn you about unsafe memory management, point out unused va
 Much like `clang-format`, you can invoke `clang-tidy` from the command line.
 We recommend you use it one file at a time so that the output is more digestible:
 
-```
+```shell script
 # Get warnings about a single file
-$ clang-tidy directory/file.cpp --
+clang-tidy directory/file.cpp --
 
 # You can add arguments you'd pass to g++ after the --
-$ clang-tidy directory/file.cpp -- -I included/
+clang-tidy directory/file.cpp -- -I included/
 ```
 
 Unlike `clang-format`, we don't require you to use `clang-tidy`.
@@ -73,10 +73,10 @@ Oftentimes, you'll find that heeding the warnings from `clang-tidy` will save yo
 Another tool you can use in this vein is `cppcheck`.
 You can invoke `cppcheck` fairly similarly:
 
-```
+```shell script
 # Check file.cpp
-$ cppcheck --enable=all directory/file.cpp
+cppcheck --enable=all directory/file.cpp
 
 # Specify include directories as well
-$ cppcheck --enable=all directory/file.cpp -I included/
+cppcheck --enable=all directory/file.cpp -I included/
 ```
