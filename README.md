@@ -3,7 +3,7 @@
 Please do not share your code or copy code from other students.
 Once you've read through this, feel free to delete it, though you may want to keep the formatting and linting sections as reference.
 
-## Getting Started
+## Contents
 
 You might have noticed a couple extra files lying around this repository.
 Here's a rundown of what they do:
