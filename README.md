@@ -9,70 +9,46 @@ You might have noticed a couple extra files lying around this repository.
 Here's a rundown of what they do:
 
 - `.clang-format` provides some settings for `clang-format`, which is a tool you can use to automatically reformat your code.
-  We've included some instructions on how to use it in the [formatting section](#formatting).
+  You can read more about code style and formatting on [the wiki](https://github.com/csci104/wiki/blob/master/style.md), and the cheat sheet is below.
   Feel free to page through the configuration file if you're interested in how it works.
 - `.clang-tidy` provides settings for `clang-tidy`, which does semantic checks on C++ files.
-  We've included instructions on how to use this tool in the [linting section](#linting).
+  We've included instructions on how to use this tool [below](#linting) as well.
 - `.editorconfig` gives most IDEs some idea about how to handle whitespace in your code files.
   It also limits the charset to `utf8` to avoid any encoding bugs.
 - `.gitignore` prevents files from being added to the index by git.
   Make sure you use this to avoid pushing things like compiled binaries and test files to keep your repository slim and ensure that graders can easily pick out what they need to grade.
   You can add a `.gitignore` file in any of this repository's subdirectories to add rules relative to that path.
 
-## Code Style
-
-Most of the canonical 104 code style is summed up by our `clang-format` configuration, which you can experiment with by writing some code and formatting it to see what changes.
-It's worth mentioning that we accept both same-line and K&R open brace positioning, but you'll have to modify the corresponding `.clang-format` options to enable the latter.
-For reference:
-
-```c++
-// Same line            // K&R
-int main() {            int main()
-    // ...              {
-}                           // ...
-                        }
-```
-
-What remains after is pretty much just naming, and we adhere to a pretty standard guideline here:
-
-- Classes should be named using `UpperCamelCase`
-- Constant variables should use `UPPER_SNAKE_CASE`
-- Methods, variables, and parameters should use `lower_snake_case`
-- Either suffix all member variables with `_` or always use `this->` to disambiguate 
-
 ## Formatting
 
 `clang-format` is a utility built on top of the `clang` tooling that, among other things, visually restructures code based on a set of style guidelines.
-**`clang-format` does not change what your code does or how it works**, instead managing things like spaces, newlines, brackets, and indentation.
+Based on a collection of settings that may be specified in a `.clang-format` file, it manages things like spacing, newlines, brackets, and indentation.
+We have already put a `.clang-format` file in your homework repository, so any files in or under the root directory will be formatted our ruleset.
 
 You can invoke `clang-format` from the command line, and it comes installed out of the box on our [Docker container](https://github.com/csci104/docker).
-We have already provided you with a set of rules, so running the utility within your homework repository is as easy as:
+Running the utility within your homework repository is as easy as:
 
-```
-$ clang-format -i directory/file.cpp
+```shell script
+clang-format -i directory/file.cpp
 ``` 
 
 If you want to format multiple files in a directory, you can use wildcard operators:
 
-```
+```shell script
 # Format all .cpp files in directory/
-$ clang-format -i directory/*.cpp
+clang-format -i directory/*.cpp
 
 # Format all .cpp and .h files in directory/ 
-$ clang-format -i directory/*.{h,cpp}
+clang-format -i directory/*.{h,cpp}
 ```
 
 Lastly, you can use the double asterisk to recursively glob.
 This is necessary when you also want to format files in subdirectories.
 
-```
+```shell script
 # Format all .cpp and .h files in directory/ and subdirectories
-$ clang-format -i directory/**/*.{h,cpp}
+clang-format -i directory/**/*.{h,cpp}
 ```
-
-Please make sure you **format your code before submitting**. 
-This ensures that graders can easily read and give you points for your work.
-It will also prevent you from losing points for formatting in code review. 
 
 ## Linting
 
