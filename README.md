@@ -38,16 +38,16 @@ If you want to format multiple files in a directory, you can use wildcard operat
 # Format all .cpp files in directory/
 clang-format -i directory/*.cpp
 
-# Format all .cpp and .h files in directory/ 
-clang-format -i directory/*.{h,cpp}
+# Format all .cpp and .h/.hpp files in directory/ 
+clang-format -i directory/*.{h,hpp,cpp}
 ```
 
 Lastly, you can use the double asterisk to recursively glob.
 This is necessary when you also want to format files in subdirectories.
 
 ```shell script
-# Format all .cpp and .h files in directory/ and subdirectories
-clang-format -i directory/**/*.{h,cpp}
+# Format all .cpp and .h/.hpp files in directory/ and subdirectories
+clang-format -i directory/**/*.{h,hpp,cpp}
 ```
 
 ## Linting
