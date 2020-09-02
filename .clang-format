@@ -29,7 +29,7 @@ BraceWrapping:
 # out to the course staff.
 
 Language: Cpp
-AccessModifierOffset: -2
+AccessModifierOffset: -4
 AlignAfterOpenBracket: AlwaysBreak
 AlignConsecutiveAssignments: false
 AlignConsecutiveDeclarations: false
